@@ -1,7 +1,14 @@
 <div class="container">
   <h4>Buscar gif:</h4>
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Buscar gifs..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-    <button class="input-group-text btn btn-primary" id="basic-addon2">Buscar</button>
+    <!-- #txtTagInput se va a llamar la referencia al input
+    y asi poder usar su propiedad value y traerme el contenido del mismo
+  Podemos decirle que el keyup lo haga solo con enter -->
+    <input
+      (keyup.enter)="searchTag()"
+      #txtTagInput
+      type="text"
+      class="form-control"
+      placeholder="Buscar gifs...">
   </div>
 </div>
