@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-lazy-image',
@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./lazy-image.component.css']
 })
 export class LazyImageComponent {
+
+  @Input()
+  public url!: string;
+
+  @Input()
+  public alt: string = '';
+
+  public hasLoaded: boolean = false;
+
+  onLoad(){
+    setTimeout(()=>{
+      this.hasLoaded = true;
+    },500);
+  }
+
 
 }
